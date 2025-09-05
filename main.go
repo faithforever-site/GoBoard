@@ -28,7 +28,7 @@ func main() {
 	printLogo()
 
 	// 初始化数据库
-	if err := db.InitDB("goboard.db"); err != nil {
+	if err := db.InitDB("goboard"); err != nil {
 		log.Fatalf("数据库初始化失败: %v", err)
 	}
 	fmt.Println("✅ 数据库连接成功")
