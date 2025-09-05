@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>{{.Title}}</title>
+</head>
+<body>
+<h1>{{.Title}}</h1>
+<p>欢迎来到后台首页！</p>
+<p>测试 API: <a href="/api/hello" target="_blank">/api/hello</a></p>
+
+<h2>请求参数：</h2>
+{{if .Params}}
+<ul>
+    {{range $key, $vals := .Params}}
+    <li>{{$key}}:
+        <ul>
+            {{range $vals}}
+            <li>{{.}}</li>
+            {{end}}
+        </ul>
+    </li>
+    {{end}}
+</ul>
+{{else}}
+<p>没有参数</p>
+{{end}}
+</body>
+</html>
